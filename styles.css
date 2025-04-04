@@ -8,6 +8,8 @@
     --azul-ciano: #026773;
     --ciano: #3ca6a6;
     --bege: #f2e3d5;
+    --preto-titulo: #242424;
+    --fundo-da-aplicacao: #f0f0f0;
     --fonte-principal: 'Poppins', sans-serif;
     --fonte-secundaria: 'Roboto', sans-serif;
 }
@@ -21,6 +23,8 @@ body {
     */
     font-size: 20px;
     margin: 1em;
+    color: var(--preto-titulo);
+    background-color: var(--fundo-da-aplicacao);
 }
 
 /* vale ressaltar que todos campos abaixo terão as mesmas medidas, todos h3 terão a mesma medida de fonte, padding, etc */
@@ -33,7 +37,6 @@ h2 {
     font-size: 32px;
     /* baseado na fonte acima, de 32px */
     padding: 1em;
-    text-align: center;
 }
 
 h1 {
@@ -66,7 +69,6 @@ h1 {
 }
 
 .home-titulo {
-    
     text-align: center;
     padding: 1em;
 }
@@ -99,21 +101,40 @@ h1 {
     grid-column: span 12;
 }
 
+.conteudo-habilidades h2 {
+    text-align: center;
+}
+
+/* atingindo a a lista através da div pai por ter mais de uma ul com as mesmas configurações */
 .habilidades-lista {
-    display: grid;
-    grid-template-columns: (12,1fr);
     list-style-type: none;
+    display: flex;
+    /* dizendo que eles não ficarão um ao lado do outro (como o flex deixa por padrão, e sim um abaixo do outro,como um display block por ex */
+    flex-direction: column;
     gap: 1em;
 }
 
+/* atingindo os elementos filhos da lista através da div pai por ter mais de uma ul com as mesmas configurações */
 .habilidades-lista li {
-    background-color: var(--bege);
+    background-color: var(--ciano);
     padding: 1em;
-    grid-column: span 12;
+    border-radius: 1em;
+    /* color: #fff; */
 }
 
-.habilidades-lista img {
-    width: 1.2em;
+.habilidades-lista li h3 {
+    padding-top: 1em;
+    /*
+    * espaço menor entre o ícone e o texto, no caso estamos usando metade da medida dela (como o padrão da fonte é 20, com .5 estamos usando 10)
+     */
+    padding-bottom: .5em;
+}
+
+.habilidades-lista li img{
+    background-color: var(--azul-ciano);
+    padding: 1rem;
+    width: 3em;
+    border-radius: 0.5em;
 }
 
 /* todas as configurações para telas de monitor, o restante acima é apenas para mobile, pois estamos começando com a técnica mobile-first */
@@ -186,11 +207,14 @@ h1 {
         object-fit: cover;
     }
 
-    .habilidades-lista li:nth-child(1){
-        grid-column: 2 / span 2;
+    .habilidades-lista {
+        /* deixando-os lado a lado alterando apenas o atributo flex-direction, que no escopo global (focado em mobile, estava em column) */
+        flex-direction: row;
     }
 
-    .habilidades-lista li:nth-child(2){
-        grid-column: 4 / span 3;
+    .habilidades-lista li {
+        height: 300px;
+        /* para que os blocos tenham os mesmos tamanhos */
+        flex: 1;
     }
 }
