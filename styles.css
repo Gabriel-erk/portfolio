@@ -1,0 +1,196 @@
+/* 
+* criando váriaveis das cores da minha paleta selecionada no Miro e das minhas fontes que também estão lá 
+* o que facilita caso tenha de ocorrer uma alteração nas fontes de todo o sistema, por ex, todas minhas páginas estão com a fonte roboto, cor preta, e eu decido trocar as cores da aplicação? imagina o trabalho que isso vai dar, então, dessa forma fica mais simples, pois você altera em apenas um único lugar, é o mesmo conceito da própria programação mesmo
+*/
+:root {
+    --azul-turquesa: #012e40;
+    --azul-turquesa-claro: #024959;
+    --azul-ciano: #026773;
+    --ciano: #3ca6a6;
+    --bege: #f2e3d5;
+    --fonte-principal: 'Poppins', sans-serif;
+    --fonte-secundaria: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--fonte-secundaria);
+    /* 
+    * aplicando conceito de escala modular (seguindo hierarquia de elementos), exemplo simplificado (ajuyda a manter a constância da aplicação e mantê-la mais harmoniosa e agradavél aos olhos)
+    * aqui estou definindo o valor "base" da fonte de toda a aplicação dentro do body (da aplicação inteira pois tudo que será exibido está dentro do body)
+    * com base na escala modular, seguindo a hierarquia dos elementos (em qual possui mais destaque), será aumetado de 6 em 6px, então h3 (que é menos relevante que h2 e h1) será 26, h2 (menos relevante que h1 seguindo a hierarquia) será 32 e por fim o que se encontra no topo da hierarquia, h1, com 38 px
+    */
+    font-size: 20px;
+    margin: 1em;
+}
+
+/* vale ressaltar que todos campos abaixo terão as mesmas medidas, todos h3 terão a mesma medida de fonte, padding, etc */
+
+h3 {
+    font-size: 26px
+}
+
+h2 {
+    font-size: 32px;
+    /* baseado na fonte acima, de 32px */
+    padding: 1em;
+    text-align: center;
+}
+
+h1 {
+    font-size: 38px
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.sobre-mim-button {
+    display: none;
+}
+
+.conteudo-home img {
+    /* vw é referente a unidade de medida da tela do usuário, não do elemento pai (uma div pai por ex), pro mobile é bom usar esse tipo de medida */
+    /* % para a imagem ocupar apenas 100% do elemento pai (section) (com vw seria da tela, o que não é o que quero */
+    width: 100%;
+}
+
+.projetos-lista {
+    /* % para a imagem ocupar apenas 100% do elemento pai (section) (com vw seria da tela, o que não é o que quero */
+    width: 100%;
+}
+
+.projetos-lista li img {
+ width: 100%;
+}
+
+.home-titulo {
+    
+    text-align: center;
+    padding: 1em;
+}
+
+/* 
+* não irá aparecer em dispositivos móveis os itens dessa lista
+*/
+.cabecalho-lista {
+    display: none;
+}
+
+.projetos-lista {
+    display: grid;
+    /* 
+    * separando a tela em 12 colunas de uma fração da tela (1fr)
+    */
+    grid-template-columns: repeat(12,1fr);
+    list-style-type: none;
+    gap: 1em; /* que é o tamanho da fonta que está sendo utilizada no projeto */
+}
+
+.conteudo-projetos {
+    text-align: center;
+}
+
+.projetos-lista li{
+    /* 
+    * dizendo apra cada li (que contêm as imagens) ocupar as 12 colunas que eles possuem
+    */
+    grid-column: span 12;
+}
+
+.habilidades-lista {
+    display: grid;
+    grid-template-columns: (12,1fr);
+    list-style-type: none;
+    gap: 1em;
+}
+
+.habilidades-lista li {
+    background-color: var(--bege);
+    padding: 1em;
+    grid-column: span 12;
+}
+
+.habilidades-lista img {
+    width: 1.2em;
+}
+
+/* todas as configurações para telas de monitor, o restante acima é apenas para mobile, pois estamos começando com a técnica mobile-first */
+@media screen and (min-width: 720px) {
+    .conteudo-home img {
+        width: 100%;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .cabecalho-lista {
+        display: flex;
+        /* provavelmente 16px pois não especifiquei nenhum tamanho de fonte */
+        gap: 1em;
+        list-style-type: none;
+    }
+
+    .cabecalho-lista li a {
+        text-decoration: none;
+    }
+
+    .conteudo-home {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .sobre-mim-button {
+        display: block;
+        margin-top: 4em;
+    }
+
+    .conteudo-home img {
+        width: 500px;
+        height: 700px;
+        /*
+        * utilizado para fazer com que a imagem se adapte baseado nas medidas que coloquei, no caso acima coloquei medidas que são menores do que a imagem veio por padrão, então, ela fica estranha, esticada, e com esse comando abaixo ela será "cortada" para se adaptar ao tamanho que eu atribui para ela sem que a qualidade seja perdida 
+         */
+        object-fit: cover;
+    }
+
+    /* 
+    * método em grid para alinhar as imagens no centro (é necessário sobrar uma coluna no começo e uma no final para o alinhamento correto)
+    * em grid é necessário definir onde o item daquela coluna começa e onde termina, usando como base a quantidade de colunas que definimos (12) então a próxima imagem começará na posição que a última terminou
+    * no primeiro elemento li filho de projetos lista estou definindo que ela começará na posição 2 e ocupará 3 de espaço das 12 colunas, ou seja, começará na posição 2 e terminará na posição 5 (pois começa na 2, ocupa mais 3 colunas de espaço (com span 3))
+    * já a segunda imagem (segundo elemento filho (segundo li) da classe projetos-lista) começa na posição 5 (onde a última terminou) e terminará na posição nove (pois ocupará 4 de espaço)
+    * a terceira começa na 9 (onde a última img terminou) e terminará na 11 (sobrando uma coluna no final, dando ideia de espaçamento)
+    */
+    .projetos-lista li:nth-child(1){
+        grid-column: 2 / span 3;
+    }
+
+    .projetos-lista li:nth-child(2){
+        grid-column: 5 / span 4;
+    }
+
+    .projetos-lista li:nth-child(3){
+        grid-column: 9 / span 3;
+    }
+
+    /*
+    * definindo para todas terem o msm tamanho e não ficarem esticadas
+    */
+    .projetos-lista li img {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .habilidades-lista li:nth-child(1){
+        grid-column: 2 / span 2;
+    }
+
+    .habilidades-lista li:nth-child(2){
+        grid-column: 4 / span 3;
+    }
+}
