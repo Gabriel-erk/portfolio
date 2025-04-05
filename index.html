@@ -20,7 +20,8 @@
         <h1>Gabriel Erick</h1>
         <nav>
             <ul class="cabecalho-lista">
-                <li><a href="#">Home</a></li>
+                <!-- #home pois estou colocando o id da minha section (que se encontra na mesma página que estou), que, minha âncora (a) irá redirecionar para lá sempre que clicar nele -->
+                <li><a href="#home">Home</a></li>
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#contato">Contato</a></li>
@@ -29,15 +30,20 @@
     </header>
 </body>
 <main>
-    <section class="conteudo-home">
-        <div>
-            <h2 class="home-titulo">Gabriel Erick</h2>
-            <p>Sou um estudannte, apaixonado por tecnologia e com especialização em user experiencia</p>
-            <a href="#"><button class="sobre-mim-button">Sobre mim</button></a>
+    <section id="home" class="conteudo-home">
+        <div class="texto-sobre-mim-home">
+            <h2 class="home-titulo">
+                <span>Eu sou o Gabriel.</span>
+                Desenvolvedor full-stack e estudante.
+            </h2>
+            <p>Sou estudante de Análise e Desenvolvimento de Sistemas na Unimar, apaixonado por tecnologia e design
+                focado na experiência do usuário.
+                Atualmente, uso projetos pessoais como forma de aprendizado e desenvolvimento, buscando sempre criar
+                soluções que unam funcionalidade e usabilidade.</p>
+            <button class="sobre-mim-button">Saiba mais sobre mim</button>
         </div>
 
-
-        <img src="img/pessoa.jpg" alt="Homem negro sentado em uma mesa mechendo em um computador">
+        <img src="img/pfp-hom2.png" alt="Homem negro sentado em uma mesa mechendo em um computador">
     </section>
 
     <section id="projetos" class="conteudo-projetos">
@@ -100,7 +106,7 @@
                             <p>gabrielmmve13@gmail.com</p>
                         </div>
                     </li>
-                    
+
                     <li>
                         <img src="img/icones/phone-call.svg">
                         <div class="texto-contato">
