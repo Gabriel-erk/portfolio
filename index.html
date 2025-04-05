@@ -21,9 +21,9 @@
         <nav>
             <ul class="cabecalho-lista">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Projetos</a></li>
-                <li><a href="#">Habilidades</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -40,7 +40,7 @@
         <img src="img/pessoa.jpg" alt="Homem negro sentado em uma mesa mechendo em um computador">
     </section>
 
-    <section class="conteudo-projetos">
+    <section id="projetos" class="conteudo-projetos">
         <h2>Projetos</h2>
         <p>Aqui está uma lista com todos os projetos como desenvolvedor web</p>
         <ul class="projetos-lista">
@@ -56,7 +56,7 @@
         </ul>
     </section>
 
-    <section class="conteudo-habilidades">
+    <section id="habilidades" class="conteudo-habilidades">
         <h2>Habilidades</h2>
         <ul class="habilidades-lista">
             <li>
@@ -84,6 +84,57 @@
             </li>
 
         </ul>
+
+    </section>
+
+    <section id="contato" class="conteudo-contato">
+
+        <h2>Entre em contato comigo!</h2>
+        <div class="agrupa-conteudo-contato">
+            <div class="formas-contato">
+                <ul class="contatos-lista">
+                    <li>
+                        <img src="img/icones/envelope.svg">
+                        <div class="texto-contato">
+                            <h3>E-MAIL</h3>
+                            <p>gabrielmmve13@gmail.com</p>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <img src="img/icones/phone-call.svg">
+                        <div class="texto-contato">
+                            <h3>LIGAR</h3>
+                            <p>(14) 99125-7009</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="formulario-contato">
+                <form action="">
+                    <div>
+                        <input type="text" placeholder="Nome Completo*">
+                        <input type="text" placeholder="Número de telefone*">
+                    </div>
+
+                    <!-- os que não possuem 2 campos na mesma linha não precisam de div, porém o navegador para mobile não enxerga caso esteja sem elas -->
+                    <div>
+                        <input type="email" placeholder="Email*">
+                    </div>
+
+                    <div>
+                        <input type="text" placeholder="Assunto*">
+                    </div>
+
+                    <div>
+                        <textarea name="mensagemParaMim" id="msgParaMim" placeholder="Mensagem"></textarea>
+                    </div>
+
+                    <button type="button">Enviar</button>
+                </form>
+            </div>
+        </div>
 
     </section>
 
