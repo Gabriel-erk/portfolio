@@ -103,6 +103,7 @@ h2 {
     /* % para a imagem ocupar apenas 100% do elemento pai (section) (com vw seria da tela, o que não é o que quero */
     width: 100%;
     border-radius: 50%;
+    box-shadow: 12px 8px 40px var(--azul-turquesa-claro);
 }
 
 .texto-sobre-mim-home p {
