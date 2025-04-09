@@ -3,11 +3,11 @@
 * o que facilita caso tenha de ocorrer uma alteração nas fontes de todo o sistema, por ex, todas minhas páginas estão com a fonte roboto, cor preta, e eu decido trocar as cores da aplicação? imagina o trabalho que isso vai dar, então, dessa forma fica mais simples, pois você altera em apenas um único lugar, é o mesmo conceito da própria programação mesmo
 */
 :root {
-    --azul-turquesa: #012e40;
-    --azul-turquesa-claro: #024959;
-    --azul-ciano: #026773;
-    --ciano: #3ca6a6;
-    --bege: #f2e3d5;
+    --azul-escuro: #414757;
+    --preto-principal: #23201c;
+    --branco-principal: #fcf9f9;
+    --marrom: #ac9579;
+    --verde-escuro: #2f4237;
     --preto-titulo: #242424;
     --fundo-da-aplicacao: #f0f0f0;
     --fonte-principal: 'Poppins', sans-serif;
@@ -23,8 +23,8 @@ body {
     */
     font-size: 20px;
     /* margin: 1em; */
-    color: var(--preto-titulo);
-    background-color: var(--fundo-da-aplicacao);
+    color: var(--branco-principal);
+    background-color: var(--preto-principal);
 }
 
 header {
@@ -33,8 +33,8 @@ header {
     * e 10% da tela de distância dos lados (% pega a % do elemento pai, vh/vw pela da tela)
     */
     padding: 1em 10%;
-    background-color: var(--preto-titulo);
-    color: var(--fundo-da-aplicacao);
+    background-color: var(--preto-principal);
+    color: var(--branco-principal);
 }
 
 /* 
@@ -103,7 +103,7 @@ h2 {
     /* % para a imagem ocupar apenas 100% do elemento pai (section) (com vw seria da tela, o que não é o que quero */
     width: 100%;
     border-radius: 50%;
-    box-shadow: 12px 8px 40px var(--azul-turquesa-claro);
+    box-shadow: 12px 8px 40px var(--azul-escuro-claro);
 }
 
 .texto-sobre-mim-home p {
@@ -173,10 +173,10 @@ h2 {
 
 /* atingindo os elementos filhos da lista através da div pai por ter mais de uma ul com as mesmas configurações */
 .habilidades-lista li {
-    background-color: var(--ciano);
+    background-color: var(--branco-principal);
     padding: 1em;
     border-radius: 1em;
-    /* color: #fff; */
+    color: var(--preto-principal);
 }
 
 .habilidades-lista li h3 {
@@ -188,7 +188,7 @@ h2 {
 }
 
 .habilidades-lista li img {
-    background-color: var(--azul-ciano);
+    background-color: var(--preto-titulo);
     padding: 1rem;
     width: 3em;
     border-radius: 0.5em;
