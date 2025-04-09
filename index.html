@@ -132,25 +132,25 @@
             <div class="formulario-contato">
                 <h2>Informações de contato</h2>
                 <form action="">
-                    <div>
-                        <input type="text" placeholder="Nome Completo*">
-                        <input type="text" placeholder="Número de telefone*">
+
+                    <div class="campo-formulario-duplo">
+                        <input class="campo-formulario" type="text" placeholder="Nome Completo*">
+
+                        <input class="campo-formulario" type="text" placeholder="Número de telefone*">
                     </div>
 
                     <!-- os que não possuem 2 campos na mesma linha não precisam de div, porém o navegador para mobile não enxerga caso esteja sem elas -->
-                    <div>
-                        <input type="email" placeholder="Email*">
-                    </div>
 
-                    <div>
-                        <input type="text" placeholder="Assunto*">
-                    </div>
+                    <input class="campo-formulario" type="email" placeholder="Email*">
 
-                    <div>
-                        <textarea name="mensagemParaMim" id="msgParaMim" placeholder="Mensagem"></textarea>
-                    </div>
+                    <input class="campo-formulario" type="text" placeholder="Assunto*">
 
-                    <button type="button">Enviar</button>
+                    <textarea class="campo-formulario" name="mensagemParaMim" id="msgParaMim"
+                        placeholder="Mensagem"></textarea>
+
+                    <div class="formulario-botao">
+                        <button>Enviar</button>
+                    </div>
                 </form>
             </div>
         </div>
