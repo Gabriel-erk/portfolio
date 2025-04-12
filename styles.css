@@ -80,7 +80,7 @@ a:active {
 /* vale ressaltar que todos campos abaixo terão as mesmas medidas, todos h3 terão a mesma medida de fonte, padding, etc */
 
 h4 {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 h3 {
@@ -272,11 +272,15 @@ h2 {
     background-color: var(--branco-principal);
 }
 
+.rodape {
+    padding: 1.5em 10%;
+
+}
+
 .conteudo-rodape {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    padding: 1.5em 10%;
 }
 
 .conteudo-rodape p,
@@ -302,14 +306,35 @@ h2 {
 }
 
 .icones-sobre-mim {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--branco-principal);
-    border-radius: .5em;
-    margin-top: 1em;
+    border-radius: .2em;
+    margin-top: .8em;
     padding: .5em;
 }
 
-.icones-sobre-mim img:nth-child(1) {
-    border-right: color(var(--azul-escuro));
+/* 
+* seletor ">" pega apenas os os filhos "div" dentro de um pai (.icones-sobre-mim) APENAS eles, não pega NADA que estiver mais afundo (como por ex outra div dentro da div que estou atingindo agora (um neto basicamente)) ele vai atingir só o filho
+*/
+.icones-sobre-mim > div {
+    padding: 0 .5em; /* dá espaço entre a borda e o ícone */
+}
+
+/* Adiciona borda à direita do primeiro ícone (Facebook) */
+.icones-sobre-mim > div:first-child {
+    border-right: 1px solid var(--preto-principal);
+}
+
+/* Adiciona borda à esquerda do último ícone (Instagram) */
+.icones-sobre-mim > div:last-child {
+    border-left: 1px solid var(--preto-principal);
+}
+
+.icones-sobre-mim img {
+    width: 1.2em;
 }
 
 .links_rapidos h4,
@@ -334,6 +359,12 @@ h2 {
 .lista_links_rapidos li img,
 .lista_redes_sociais li img {
     width: 1em;
+}
+
+.direitos-reservados {
+    text-align: center;
+    margin-top: 2em;
+    font-size: .6em;
 }
 
 /* todas as configurações para telas de monitor, o restante acima é apenas para mobile, pois estamos começando com a técnica mobile-first */
@@ -447,5 +478,15 @@ h2 {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .conteudo-rodape {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .icones-sobre-mim {
+        width: 45%;
     }
 }
