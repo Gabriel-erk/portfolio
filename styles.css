@@ -414,13 +414,13 @@ h2 {
     }
 
     .conteudo-home img {
-        width: 500px;
-        height: 700px;
+        width: 600px;
+        height: 600px;
         /*
         * utilizado para fazer com que a imagem se adapte baseado nas medidas que coloquei, no caso acima coloquei medidas que são menores do que a imagem veio por padrão, então, ela fica estranha, esticada, e com esse comando abaixo ela será "cortada" para se adaptar ao tamanho que eu atribui para ela sem que a qualidade seja perdida 
          */
         object-fit: cover;
-        /* border-radius: 80rem; */
+        border-radius: 50%;
     }
 
     /* 
