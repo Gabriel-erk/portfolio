@@ -50,7 +50,8 @@ section {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
     font-family: var(--fonte-principal);
 }
 
@@ -307,34 +308,26 @@ h2 {
 
 .icones-sobre-mim {
     display: flex;
-    width: 50%;
-    justify-content: space-between;
-    align-items: center;
     background-color: var(--branco-principal);
-    border-radius: .2em;
+    border-radius: .5em;
     margin-top: .8em;
-    padding: .5em;
-}
-
-/* 
-* seletor ">" pega apenas os os filhos "div" dentro de um pai (.icones-sobre-mim) APENAS eles, não pega NADA que estiver mais afundo (como por ex outra div dentro da div que estou atingindo agora (um neto basicamente)) ele vai atingir só o filho
-*/
-.icones-sobre-mim > div {
-    padding: 0 .5em; /* dá espaço entre a borda e o ícone */
-}
-
-/* Adiciona borda à direita do primeiro ícone (Facebook) */
-.icones-sobre-mim > div:first-child {
-    border-right: 1px solid var(--preto-principal);
-}
-
-/* Adiciona borda à esquerda do último ícone (Instagram) */
-.icones-sobre-mim > div:last-child {
-    border-left: 1px solid var(--preto-principal);
+    padding: .5em 0;
+    justify-content: space-evenly;
+    width: 40%;
 }
 
 .icones-sobre-mim img {
-    width: 1.2em;
+    padding: 0 .4em;
+}
+
+/* Adiciona borda nos do meio (só X) */
+.icones-sobre-mim img:nth-child(2) {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.icones-sobre-mim img {
+    width: 2em;
 }
 
 .links_rapidos h4,
@@ -487,6 +480,6 @@ h2 {
     }
 
     .icones-sobre-mim {
-        width: 45%;
+        width: 35%;
     }
 }
